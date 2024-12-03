@@ -1,14 +1,29 @@
 from gtts import gTTS
+import os
 
 
 class Converter:
-    def __init__(self, txt):
-        self.test_text = txt
+    def __init__(self, text_samples_directory, audio_samples_directory):
+        self.text_samples_directory = text_samples_directory
+        self.audio_samples_directory = audio_samples_directory
+        self.text_samples = []
 
-    def test_method(self):
-        txt = self.test_text
-        # test_text = ("Learn from yesterday, live for today, hope for tomorrow. "
-        #              "The important thing is not to stop questioning. - Einstein")
+    def extract_text(self):
+        for root, directories, files in os.walk(self.text_samples_directory):
+            for fileName in files:
+                full_filename = os.path.join(root, fileName)
+                print(full_filename)
+                with open(full_filename, 'r', encoding='utf-8') as file:
+                    for line in file:
+                        self.text_samples.append(line)
+                        print(line)
+
+    def converter(self):
+        text_sample_list = self.text_samples
         language = "en"
-        obj = gTTS(text=txt, lang=language, slow=True)
-        obj.save("test_sound.mp3")
+        index = 0
+        for text_sample in text_sample_list:
+            if text_sample.strip():
+                obj = gTTS(text=text_sample, lang=language, slow=True)
+                obj.save(f"./{self.audio_samples_directory}/audio_quote_{index}.mp3")
+                index += 1
