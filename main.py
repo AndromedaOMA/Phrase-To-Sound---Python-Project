@@ -1,5 +1,4 @@
 from gtts import gTTS
-from playsound import playsound
 
 test_text = ("Learn from yesterday, live for today, hope for tomorrow. "
              "The important thing is not to stop questioning. - Einstein")
