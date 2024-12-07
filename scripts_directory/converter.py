@@ -13,10 +13,12 @@ class Converter:
             for fileName in files:
                 full_filename = os.path.join(root, fileName)
                 print(full_filename)
-                with open(full_filename, 'r', encoding='utf-8') as file:
-                    for line in file:
-                        self.text_samples.append(line)
-                        print(line)
+                if fileName.endswith('.txt'):
+                    with open(full_filename, 'r', encoding='utf-8') as file:
+                        for line in file:
+                            line = line.strip()
+                            self.text_samples.append(line)
+                            print(line)
 
     def converter(self):
         text_sample_list = self.text_samples
