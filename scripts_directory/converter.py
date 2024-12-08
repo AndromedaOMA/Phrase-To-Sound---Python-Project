@@ -20,8 +20,11 @@ class Converter:
                             self.text_samples.append(line)
                             print(line)
 
-    def converter(self):
-        text_sample_list = self.text_samples
+    def converter(self, flag=True, quote=None):
+        if flag:
+            text_sample_list = self.text_samples
+        else:
+            text_sample_list = quote
         language = "en"
         index = 0
         for text_sample in text_sample_list:
@@ -29,3 +32,4 @@ class Converter:
                 obj = gTTS(text=text_sample, lang=language, slow=True)
                 obj.save(f"./{self.audio_samples_directory}/audio_quote_{index}.mp3")
                 index += 1
+

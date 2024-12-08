@@ -13,8 +13,8 @@ try:
     c.extract_text()
     c.converter()
 
-    # gui = GUI(output)
-    # gui.gui()
+    gui = GUI(output)
+    gui.gui()
 
 except:
     print("Invalid parameters")
