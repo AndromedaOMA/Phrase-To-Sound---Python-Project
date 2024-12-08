@@ -7,13 +7,13 @@ try:
         print("Usage: python main.py <director input>(./text_samples) <director output>(./text_converted_to_audio)")
         sys.exit()
 
-    input = sys.argv[1]
-    output = sys.argv[2]
-    c = Converter(input, output)
+    project_input = sys.argv[1]
+    project_output = sys.argv[2]
+    c = Converter(project_input, project_output)
     c.extract_text()
     c.converter()
 
-    gui = GUI(output)
+    gui = GUI(project_output)
     gui.gui()
 
 except:

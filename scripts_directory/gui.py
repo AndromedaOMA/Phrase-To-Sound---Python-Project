@@ -54,4 +54,3 @@ class GUI:
         button.pack(fill=tk.BOTH, expand=True)
 
         self.root.mainloop()
-

@@ -32,4 +32,3 @@ class Converter:
                 obj = gTTS(text=text_sample, lang=language, slow=True)
                 obj.save(f"./{self.audio_samples_directory}/audio_quote_{index}.mp3")
                 index += 1
-
