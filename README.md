@@ -8,24 +8,24 @@
 (EN) The purpose of the application is to be able to convert a sentence into an mp3 file, which will store
 spoken recording of the sentence. For this, two scripts will be created.
   
-  Script 1 : 2 directories will be given as input parameters: one containing several
+  - Script 1 : 2 directories will be given as input parameters: one containing several
   text files, and one where the mp3 files will be stored. The first directory given at the entrance will
   run recursively. The files will contain one sentence per line. Each sentence will be
   converted to mp3 file and stored in the output directory.
   
-  Script 2 : To create a minimal graphical interface, in which one can enter a
+  - Script 2 : To create a minimal graphical interface, in which one can enter a
   sentence. Pressing a Play button will convert the sentence to sound and play it.
   Use a text2speech library for this.
   
 (RO) Scopul aplicației este să poată converti o propoziție într-un fișier mp3, care va stoca
 înregistrarea rostită a propoziției. Pentru asta, vor fi create două scripturi.
   
-  Script 1 : Se vor da ca și parametri de intrare 2 directoare: unul în care se află mai multe
+  - Script 1 : Se vor da ca și parametri de intrare 2 directoare: unul în care se află mai multe
   fișiere text, și unul în care se vor stoca fișierele mp3. Primul director dat la intrare se va
   parcurge recursiv. Fișierele vor conține câte o propoziție pe linie.Fiecare propoziție va fi
   convertită în fișier mp3 și stocat în directorul de output.
   
-  Script 2 : Să se creeze o interfață grafică minimală, în care să se poată introduce o
+  - Script 2 : Să se creeze o interfață grafică minimală, în care să se poată introduce o
   propoziție. Apăsând un buton de Play, se va converti propoziția în sunet și se va reda.
   Utilizati o librarie text2speech pentru acest lucru.
   
@@ -43,17 +43,25 @@ spoken recording of the sentence. For this, two scripts will be created.
 
 # How does it work?
 
-- something
+- The GUI is divided into three main components, a list of mp3 files, a text border and a button.
+- The list of mp3 files represents all text-to-audio conversions of the text files in the directory entered at the first argument on the Python command line. You can select one of these and you will automatically hear the pronunciation of the text files.
+- The text border and the button have a common role: Enter any text you want then press the button to give you the audio pronunciation of what you typed!
+  </br>
+  </br>
+<img src="https://github.com/user-attachments/assets/96ee3009-2acc-4b1b-b329-ac1dbff0638a" width="600" height="600"></img>
+
 ---
 
 <h3 align="left">Structure:</h3>
 
- Like in the above requirements, the project will be 
- 
+ - The structure of the project is simple: 
+     I. In the file main.py we will call the two scripts that build the foundation of the project: converter.py and gui.py
+     II. converter.py focuses on working with files and converting them from text files to mp3 files. The gTTS library will be used
+     III. gui.py focuses on building the GUI and rendering the desired output. The gTTS, tkinter and playsound libraries will be used
+    
 <h3 align="left">The logic behind the code:</h3>
 
- - The front end was made using HTML, CSS and JavaScript language resulting a responsive and user friendly design.
- - The back end was made using PHP language storing all the user information (Import/Store data about their children) and responding to all user supported commands (Login/Signup).
+ - The entire project was written using the Pyhon programming language and gTTS libraries for text-to-audio conversion, tkinter to generate the GUI and playsound to play the voice based on the chosen/written audio file.
  
 ---
 
